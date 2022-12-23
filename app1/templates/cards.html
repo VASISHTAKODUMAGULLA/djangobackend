@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style>
+        .card{
+            width:150px;
+            height: 150px;
+            border: 1px dotted black;
+        }
+        .card:hover{
+            border: 3px solid darkred;
+        }
+        .card-color{
+            width:150px;
+            height: 100px;
+        }
+        .card-label{
+            width:150px;
+            height: 50px;
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+<div id = "card-list" style = "display:flex">
+    {% for i in colors %}
+        <div class = "card">
+        <div class="card-color" style="background-color: {{ i }}"></div>
+        <div class="card-label">{{ i }}</div>
+        </div>
+    {% empty %}
+        sorry, no cards there to show:(
+    {% endfor %}
+</div>
+</body>
+</html>

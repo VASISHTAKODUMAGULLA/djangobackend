@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Card</title>
+</head>
+<body>
+<form method="post" action="{% url 'add-card' %}">
+    {% csrf_token %}
+    Color: <input name="color" type = "text"/>
+    Price: <input name="price" type = "text"/>
+    <input type="submit" name="Submit">
+</form>
+</body>
+</html>

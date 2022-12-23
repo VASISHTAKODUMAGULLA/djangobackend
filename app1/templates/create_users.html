@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Provide your details for registration:</title>
+</head>
+<body>
+<form method="post" action="{% url 'add-user' %}">
+    {% csrf_token %}
+    username: <input name="username" type = "text"/>
+    password: <input name="password" type = "text"/>
+    email: <input name="email" type = "email"/>
+    <input type="submit" name="Submit">
+</form>
+</body>
+</html>

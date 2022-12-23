@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style>
+        .card{
+            width:150px;
+            height: 150px;
+            border: 1px dotted black;
+        }
+        .card:hover{
+            border: 3px solid darkred;
+        }
+        .card-color{
+            width:150px;
+            height: 100px;
+        }
+        .card-label{
+            width:150px;
+            height: 50px;
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+<div style = "display:flex">
+        <div class = "card">
+        <div class="card-color" style="background-color: {{card.color}}"></div>
+        <div class="card-label">{{ card.id }} {{ card.price }}</div>
+        </div>
+</div>
+</body>
+</html>
