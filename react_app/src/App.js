@@ -5,7 +5,12 @@ import Basket from "./components/Basket";
 import {useState} from 'react';
 import InputForm from "./components/inputForm";
 import SignUp from './components/signup';
+import Navbar from './components/navbar';
 import LoginForm from './components/login';
+import Home from './components/home';
+import EditAccount from './components/editAccount';
+import MyItems from './components/myItems';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
 
@@ -43,20 +48,41 @@ function App() {
     }
 
   return (
-    <div>
         <div>
-            {/* <p><b>Cards:</b> {colorList.join(', ')}</p>
+            <div>
+                {/* <p><b>Cards:</b> {colorList.join(', ')}</p>
             <b>BasketList:</b> {basketList.join(', ')} */}
+                {/* <Navbar></Navbar> */}
+                <Router>
+                    <Switch>
+                        <Route path='/shop'>
+                        <Home/>   
+                        </Route>
+                        <Route path='/login'>
+                        <LoginForm></LoginForm>
+                        </Route>
+                        <Route path='/signup'>
+                        <SignUp></SignUp>
+                        </Route>
+                        <Route path='/account'>
+                        <EditAccount/>
+                        </Route>
+                        <Route path='/myitems'>
+                        <MyItems/>
+                        </Route>
+                    </Switch>
+                </Router>
+            </div>
+
+            {/* <div className="App">
+                <CardContainer cards={cardList} ></CardContainer>
+                <Basket deleteAllHandler={deleteAll} payHandler={confirmPayment} deleteCardHandler={deleteCard} cardList={basketList}></Basket>
+            </div>
+            <InputForm addCardButton={addCardHandler}></InputForm> */}
+          
+            
         </div>
-        <div className="App">
-            <CardContainer  cards={cardList} ></CardContainer>
-            <Basket  deleteAllHandler={deleteAll} payHandler={confirmPayment} deleteCardHandler={deleteCard} cardList={basketList}></Basket>
-        </div>
-        <InputForm addCardButton={addCardHandler}></InputForm>
-        {/* <SignUp></SignUp> */}
-        <LoginForm></LoginForm>
-    </div>
-  );
+    );
 }
 
 export default App;

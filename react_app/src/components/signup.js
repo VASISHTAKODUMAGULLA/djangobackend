@@ -1,5 +1,5 @@
 import {useState} from "react";
-
+import Navbar from './navbar'
 
 function SignUpForm(props){
 
@@ -28,6 +28,7 @@ function SignUpForm(props){
     }
     return (
         <div>
+            <Navbar></Navbar>
             <form onSubmit={api}>
             <label>
                 User Name:

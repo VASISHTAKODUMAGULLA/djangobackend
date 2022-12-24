@@ -35,7 +35,8 @@ function Basket(props){
 
     return (
         <div style={basketStyle}>
-            <h1 onClick={hideHandler}> Basket {props.cardList.length}</h1>
+            <button onClick={hideHandler}>X</button>
+            <h1 > Basket {props.cardList.length}</h1>
             {hide && <div style={{textAlign: 'left', margin: 10}}>
                 {props.cardList.map((item, idx) => (
                     <li style={{display: 'flex'}} key={idx}>

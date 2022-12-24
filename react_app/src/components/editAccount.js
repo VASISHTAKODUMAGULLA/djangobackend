@@ -1,7 +1,6 @@
+import Navbar from "./navbar";
 import {useState} from "react";
-import Navbar from './navbar'
-
-function LoginForm(props){
+function EditAccount() {
     const loginStyle ={
         // margin-left: "auto",
         // margin-right: "auto",
@@ -9,11 +8,9 @@ function LoginForm(props){
         border: "black solid 1px",
         height: "250px",
         width: "200px"
-
     }
     const [val_name, setVal_name] = useState('');
     const [val_password, setVal_password] = useState('');
- 
     function updateValue_username(e){
         // console.log(e);
         setVal_name(e.target.value);
@@ -28,8 +25,9 @@ function LoginForm(props){
         alert("you are sending an api")
     }
     return (
-        <div >
+        <div>
             <Navbar></Navbar>
+            <h1>Edit Account works</h1>
             <div style={loginStyle}>
             <form onSubmit={api}>
             <div>
@@ -40,15 +38,20 @@ function LoginForm(props){
             </div>
             <div>
             <label style={{margin:"5px"}}>
-                Password:
+                Old Password:
                 <input type='password' value={val_password} onChange={updateValue_password}/>
             </label>
             </div>
-            <input style={{margin:"5px"}} type="submit" value="login"/>
+            <div>
+            <label style={{margin:"5px"}}>
+                New Password:
+                <input type='password' value={val_password} onChange={updateValue_password}/>
+            </label>
+            </div>
+            <input style={{margin:"5px"}} type="submit" value="Confirm"/>
             </form>
             </div>
         </div>
-    )
+    );
 }
-
-export default LoginForm;
+export default EditAccount;
